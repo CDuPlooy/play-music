@@ -4,11 +4,11 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
-import { SongComponent } from '../_components/song/song.component';
-import { AlbumComponent } from '../_components/album/album.component';
-import { PlaylistComponent } from '../_components/playlist/playlist.component';
-import { UserComponent } from '../_components/user/user.component';
-
+import { SongComponent } from '../_components';
+import { AlbumComponent } from '../_components';
+import { PlaylistComponent } from '../_components';
+import { UserComponent } from '../_components';
+import { NavbarComponent } from '../_shared/navbar';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,8 @@ import { UserComponent } from '../_components/user/user.component';
     SongComponent,
     AlbumComponent,
     PlaylistComponent,
-    UserComponent
+    UserComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
