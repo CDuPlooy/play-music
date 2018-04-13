@@ -8,7 +8,7 @@ import { SongComponent } from '../_components';
 import { AlbumComponent } from '../_components';
 import { PlaylistComponent } from '../_components';
 import { UserComponent } from '../_components';
-import { NavbarComponent } from '../_shared/navbar';
+import { NavbarComponent } from '../_shared';
 
 @NgModule({
   declarations: [
