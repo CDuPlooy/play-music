@@ -9,6 +9,7 @@ import { AlbumComponent } from '../_components';
 import { PlaylistComponent } from '../_components';
 import { UserComponent } from '../_components';
 import { NavbarComponent } from '../_shared';
+import { PlaybarComponent } from '../_components/playbar/playbar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NavbarComponent } from '../_shared';
     AlbumComponent,
     PlaylistComponent,
     UserComponent,
-    NavbarComponent
+    NavbarComponent,
+    PlaybarComponent
   ],
   imports: [
     BrowserModule,
