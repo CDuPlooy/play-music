@@ -8,7 +8,7 @@ import { PlaylistComponent, UserComponent, AlbumComponent, SongComponent,Songcar
 import { NavbarComponent, PlaybarComponent } from '../_shared';
 
 import { DemoService } from '../_services/';
-import {HttpClient, HttpHandler} from "@angular/common/http";
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,9 +23,10 @@ import {HttpClient, HttpHandler} from "@angular/common/http";
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
   ],
-  providers: [DemoService, HttpClient, HttpHandler],
+  providers: [DemoService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

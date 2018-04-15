@@ -25,9 +25,11 @@ export class DemoService {
 
   }
 
-  public getAlbums() {
+  public getAlbums(): Observable<JSON> {
           const obvs: Observable<string> = this.http.get<string>('https://raw.githubusercontent.com/DowntownCookieFrenzy/play-music-json/master/demo.json', {responseType: 'json'});
-          obvs.subscribe((data) => console.log(data));
+          return obvs.pipe(
+              map((data) => data['Albums'])
+          );
   }
 
 }

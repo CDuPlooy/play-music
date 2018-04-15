@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Album} from "../../_models";
 import {DemoService} from "../../_services";
+import {HttpClient, HttpClientModule} from "@angular/common/http";
 
 @Component({
   selector: 'app-album',
@@ -9,13 +10,12 @@ import {DemoService} from "../../_services";
 })
 export class AlbumComponent implements OnInit {
 
-  constructor(private demo: DemoService) { }
+  constructor(private demo: DemoService, private http: HttpClient) { }
   public albums: Album[];
   public buffer: JSON;
 
   ngOnInit() {
-    console.log("Testing: ");
-    this.demo.getAlbums();
+      this.demo.getAlbums();
   }
 
 }
