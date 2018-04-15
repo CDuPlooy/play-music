@@ -1,35 +1,37 @@
 import { Injectable } from '@angular/core';
-import { Song,Album,Playlist,User } from '../../_models';
-import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs/Observable";
+import { Song, Album, Playlist, User } from '../../_models';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
 
 @Injectable()
 export class DemoService {
 
-  constructor(private http: HttpClient) { this.resetDemo(); }
+  constructor(private http: HttpClient) {  }
   private songs: Song[];
-  private albums: Album[];
   private users: User[];
   private playlist: Playlist[];
 
 
-  public resetDemo(){
-    this.songs = [];
-    this.albums = [];
-    this.users = [];
-    this.playlist = [];
-  }
-
-  public getSongs(){
+  public getSongs() {
 
   }
 
-  public getAlbums(): Observable<JSON> {
-          const obvs: Observable<string> = this.http.get<string>('https://raw.githubusercontent.com/DowntownCookieFrenzy/play-music-json/master/demo.json', {responseType: 'json'});
+
+  public getAlbums(): Observable<Album[]> {
+          const url = 'https://raw.githubusercontent.com/DowntownCookieFrenzy/play-music-json/master/demo.json';
+          const obvs: Observable<JSON> = this.http.get<JSON>(url, {responseType: 'json'});
           return obvs.pipe(
-              map((data) => data['Albums'])
+              map((data) => {
+                data = data['Albums'];
+                const albums: Album[] = [];
+                for (let i = 0; i < Object.keys(data).length; i++) {
+                  albums.push(Album.parse(data[i]));
+                }
+                return albums;
+              })
           );
   }
+
 
 }

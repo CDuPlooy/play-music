@@ -5,7 +5,7 @@ import {AlbumComponent} from '../_components/album/album.component';
 import {PlaylistComponent} from '../_components/playlist/playlist.component';
 import {UserComponent} from '../_components/user/user.component';
 import {AppComponent} from './app.component';
-import {SongcardsComponent} from "../_components/songcards/songcards.component";
+import {SongcardsComponent} from '../_components/songcards/songcards.component';
 
 const routes: Routes = [
   {path: 'songs', component: SongcardsComponent},

@@ -1,4 +1,4 @@
-import {Playlist} from "../";
+import {Playlist} from '../';
 
 export class User {
   public id: number;
@@ -6,7 +6,7 @@ export class User {
   public playlists: Playlist[];
   public recommended: Playlist[];
 
-  public constructor(){
+  public constructor() {
   }
 
   static parse(data: JSON): User {

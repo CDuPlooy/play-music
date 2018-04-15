@@ -6,7 +6,7 @@ export class Song {
   public likes: number;
   public dislikes: number;
 
-  public constructor(){
+  public constructor() {
   }
 
   static parse(data: JSON): Song {

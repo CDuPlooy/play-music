@@ -1,7 +1,12 @@
-<div class="row card-group">
-  <div class="col-4"  *ngFor="let album of albums">
-    <div class="card">
-        Testing
+<div class="card-group">
+    <div class="row-4" *ngFor="let c of cards">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <img class="card-img-bottom" src="{{ c.src }}" alt="">
+            <h5 class="card-title">{{ c.title }}</h5>
+            <p class="card-text">{{ c.text }}</p>
+            <a href="#" class="btn btn-primary">Play</a>
+        </div>
     </div>
-  </div>
+    </div>
 </div>
