@@ -5,9 +5,10 @@ import {AlbumComponent} from '../_components/album/album.component';
 import {PlaylistComponent} from '../_components/playlist/playlist.component';
 import {UserComponent} from '../_components/user/user.component';
 import {AppComponent} from './app.component';
+import {SongcardsComponent} from "../_components";
 
 const routes: Routes = [
-  {path: 'songs', component: SongComponent},
+  {path: 'songs', component: SongcardsComponent},
   {path: 'albums', component: AlbumComponent},
   {path: 'playlists', component: PlaylistComponent},
   {path: 'users', component: UserComponent},
