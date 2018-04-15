@@ -6,12 +6,12 @@ export class Album {
     public artist: string;
     public songs: Song[];
 
-    public constructor(id:number, name: string){
+    public constructor(id:number, name: string, url: string){
         this.id = id;
         this.name = name;
     }
 
     static parse(data: JSON): Album {
-        return new Album(data['id'], data['name']);
+        return new Album(data['id'], data['name'], data['img']);
     }
 }
