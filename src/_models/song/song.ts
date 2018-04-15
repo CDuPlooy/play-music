@@ -9,6 +9,7 @@ export class Song {
   public constructor(){
   }
 
-  static parse(data: JSON): Album {
+  static parse(data: JSON): Song {
+    return new Song();
   }
 }

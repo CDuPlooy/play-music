@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { GithubService } from './firebase.service';
+import { GithubService } from './demo.service';
 
 describe('GithubService', () => {
   beforeEach(() => {

@@ -1,3 +1,5 @@
+import {Song} from "../";
+
 export class Album {
     public id: number;
     public name: string;
@@ -10,6 +12,6 @@ export class Album {
     }
 
     static parse(data: JSON): Album {
-        return new Album(data['name']);
+        return new Album(data['id'], data['name']);
     }
 }

@@ -1,3 +1,5 @@
+import {Playlist} from "../";
+
 export class User {
   public id: number;
   public name: string;
@@ -7,6 +9,7 @@ export class User {
   public constructor(){
   }
 
-  static parse(data: JSON): Album {
+  static parse(data: JSON): User {
+    return new User();
   }
 }
