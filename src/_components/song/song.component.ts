@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {DemoService} from "../../_services";
+import {Card} from "../../_models";
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @Component({
   selector: 'app-song',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SongComponent implements OnInit {
 
-  constructor() { }
+    constructor(private demo: DemoService, private http: HttpClient) { }
+    public cards: Card[] = [];
 
   ngOnInit() {
+      this.demo.getSongs().subscribe((data) => {
+          for (let i = 0; i < data.length; i++) {
+              this.cards.push(data[i].toCard());
+          }
+      });
   }
 
 }
