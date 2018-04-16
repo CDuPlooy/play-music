@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {DemoService} from "../../_services";
-import {Card} from "../../_models";
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {DemoService} from '../../_services';
+import {Card, Song} from '../../_models';
+import {HttpClient} from '@angular/common/http';
 
 @Component({
   selector: 'app-song',

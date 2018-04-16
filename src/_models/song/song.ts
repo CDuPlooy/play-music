@@ -1,29 +1,24 @@
-import {Card} from "../card/card";
+import {Card} from '../card/card';
+import {Deserialize, deserializeAs, Serialize, serializeAs} from 'cerialize';
 
 export class Song {
-  public id: number;
-  public name: string;
-  public artist: string;
-  public duration: number;
-  public likes: number;
-  public dislikes: number;
-  public src: string;
+  @deserializeAs('id') @serializeAs('id') public id: number;
+  @deserializeAs('name') @serializeAs('name') public name: string;
+  @deserializeAs('artist') @serializeAs('artist') public artist: string;
+  @deserializeAs('duration') @serializeAs('duration') public duration: number;
+  @deserializeAs('likes') @serializeAs('likes') public likes: number;
+  @deserializeAs('dislikes') @serializeAs('dislikes') public dislikes: number;
+  @deserializeAs('img') @serializeAs('img') public src: string;
 
-  public constructor(id: number, name: string, artist: string, time: number, likes: number, dislikes: number, img: string) {
-      this.id = id;
-      this.name = name;
-      this.artist = artist;
-      this.duration = time;
-      this.likes = likes;
-      this.dislikes = dislikes;
-      this.src = img;
-  }
+  public constructor() {}
 
   static parse(data: JSON): Song {
-    return new Song(data['id'], data['name'], data['artist'], data['duration'], data['likes'], data['dislikes'], data['img']);
+        let song: Song = new Song();
+        song = Deserialize(data, Song);
+        return song;
   }
 
-    public toCard(): Card {
-        return new Card(this.name, this.artist, this.src);
-    }
+  public toCard(): Card {
+      return new Card(this.name, this.artist, this.src);
+  }
 }
