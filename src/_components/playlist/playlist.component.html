@@ -1,8 +1,8 @@
 <div class="card-group">
-  <div class="row-4" *ngFor="let c of cards">
+  <div class="row-4 d-inline-flex p-2" *ngFor="let c of cards">
     <div class="card" style="width: 18rem;">
       <div class="card-body">
-        <img class="card-img-bottom" src="{{ c.src }}" alt="">
+        <img class="card-img-bottom flex-fill" src="{{ c.src }}" alt='img'>
         <h5 class="card-title">{{ c.title }}</h5>
         <p class="card-text">{{ c.text }}</p>
         <a href="#" class="btn btn-primary">Play</a>

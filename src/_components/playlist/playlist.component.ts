@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {DemoService} from "../../_services";
-import {Playlist, Card} from "../../_models";
+import {DemoService} from '../../_services';
+import {Playlist, Card} from '../../_models';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @Component({

@@ -1,5 +1,5 @@
 import {Song} from '../';
-import {Card} from "../card/card";
+import {Card} from '../card/card';
 
 export class Playlist {
   public id: number;
