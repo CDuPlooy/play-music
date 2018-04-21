@@ -1,0 +1,15 @@
+.card_center{
+    /*z-index: 2;*/
+    position: relative;
+}
+
+.card_behind{
+    /*z-index: 1;*/
+    position: absolute;
+}
+
+.card_overlay{
+    position: relative;
+    top: 0;
+    left: 0;
+}

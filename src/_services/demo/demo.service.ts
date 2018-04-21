@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Song, Album, Playlist, User } from '../../_models';
+import {Song, Album, Playlist, User, Artist} from '../../_models';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
@@ -55,6 +55,21 @@ export class DemoService {
                     playlist.push(Playlist.parse(data[i]));
                 }
                 return playlist;
+            })
+        );
+    }
+
+    public getArtists(): Observable<Artist[]> {
+        const url = 'https://raw.githubusercontent.com/DowntownCookieFrenzy/play-music-json/master/demo.json';
+        const obvs: Observable<JSON> = this.http.get<JSON>(url, {responseType: 'json'});
+        return obvs.pipe(
+            map((data) => {
+                data = data['Artists'];
+                const artist: Artist[] = [];
+                for (let i = 0; i < Object.keys(data).length; i++) {
+                    artist.push(Artist.parse(data[i]));
+                }
+                return artist;
             })
         );
     }

@@ -6,6 +6,8 @@ import {PlaylistComponent} from '../_components/playlist/playlist.component';
 import {UserComponent} from '../_components/user/user.component';
 import {AppComponent} from './app.component';
 import {NowplayingComponent} from '../_components/nowplaying/nowplaying.component';
+import {ArtistComponent} from '../_components/artist/artist.component';
+import {AlbumviewComponent} from '../_components/albumview/albumview.component';
 
 const routes: Routes = [
   {path: 'songs', component: SongComponent},
@@ -13,6 +15,8 @@ const routes: Routes = [
   {path: 'playlists', component: PlaylistComponent},
   {path: 'users', component: UserComponent},
   {path: 'nowplaying', component: NowplayingComponent},
+  {path: 'artist/:id', component: ArtistComponent},
+  {path: 'album/:id', component: AlbumviewComponent},
   {path: '#', component: AppComponent}
   ];
 

@@ -10,6 +10,8 @@ import { NavbarComponent, PlaybarComponent } from '../_shared';
 import { DemoService } from '../_services/';
 import { HttpClientModule } from '@angular/common/http';
 import { NowplayingComponent } from '../_components/nowplaying/nowplaying.component';
+import { ArtistComponent } from '../_components/artist/artist.component';
+import { AlbumviewComponent } from '../_components/albumview/albumview.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +24,8 @@ import { NowplayingComponent } from '../_components/nowplaying/nowplaying.compon
     PlaybarComponent,
     SongcardsComponent,
     NowplayingComponent,
+    ArtistComponent,
+    AlbumviewComponent,
   ],
   imports: [
     BrowserModule,
