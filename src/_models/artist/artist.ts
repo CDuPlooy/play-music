@@ -1,4 +1,5 @@
 import {Deserialize, deserializeAs, serializeAs} from 'cerialize';
+import {Card} from '../card/card';
 
 export class Artist {
     @deserializeAs('id') @serializeAs('id') public id: number;
@@ -13,5 +14,9 @@ export class Artist {
         let artist: Artist = new Artist();
         artist = Deserialize(data, Artist);
         return artist;
+    }
+
+    public toCard(): Card {
+        return new Card(this.name, '', this.img);
     }
 }

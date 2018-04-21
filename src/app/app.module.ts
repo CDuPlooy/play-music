@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { NowplayingComponent } from '../_components/nowplaying/nowplaying.component';
 import { ArtistComponent } from '../_components/artist/artist.component';
 import { AlbumviewComponent } from '../_components/albumview/albumview.component';
+import { HomeComponent } from '../_components/home/home.component';
 
 @NgModule({
   declarations: [
@@ -26,6 +27,7 @@ import { AlbumviewComponent } from '../_components/albumview/albumview.component
     NowplayingComponent,
     ArtistComponent,
     AlbumviewComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,

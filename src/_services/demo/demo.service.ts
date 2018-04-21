@@ -74,5 +74,20 @@ export class DemoService {
         );
     }
 
+    public getFeatured(): Observable<Artist[]> {
+        const url = 'https://raw.githubusercontent.com/DowntownCookieFrenzy/play-music-json/master/demo.json';
+        const obvs: Observable<JSON> = this.http.get<JSON>(url, {responseType: 'json'});
+        return obvs.pipe(
+            map((data) => {
+                data = data['Artists'];
+                const artist: Artist[] = [];
+                for (let i = 0; i < Object.keys(data).length; i++) {
+                    artist.push(Artist.parse(data[i]));
+                }
+                return artist;
+            })
+        );
+    }
+
 
 }
