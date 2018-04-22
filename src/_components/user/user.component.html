@@ -1,3 +1,15 @@
-<p>
-  user works!
-</p>
+<div class="jumbotron">
+  <img class="rounded-circle" style="height: 10%; width: 10%;" src="{{activeUser.img}}">
+  <h1 class="display-4">{{ activeUser.name}}</h1>
+  <hr class="my-4">
+  <div class="card-group">
+    <div class="row-4 d-inline-flex p-2" *ngFor="let c of cards">
+      <div class="card" style="width: 18rem;">
+        <img class="card-img-top flex-fill" src="{{ c.src }}" alt='img'>
+        <div class="card-body">
+          <h5 class="card-title">{{ c.title }}</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,26 +1,26 @@
 import {Song} from '../';
 import {Card} from '../card/card';
+import {Deserialize, deserializeAs, serializeAs} from 'cerialize';
+import {Artist} from '../artist/artist';
 
 export class Playlist {
-  public id: number;
-  public name: string;
+  @deserializeAs('id') @serializeAs('id') public id: number;
+  @deserializeAs('name') @serializeAs('name') public name: string;
+  @deserializeAs('img') @serializeAs('img') public src: string;
+
   public songs: Song[];
   public likes: number;
   public dislikes: number;
-  public src: string;
   public owner: string;
 
-  public constructor(id: number, name: string, likes: number, dislikes: number, url: string, owner: string) {
-    this.id = id;
-    this.name = name;
-    this.likes = likes;
-    this.dislikes = dislikes;
-    this.src = url;
-    this.owner = owner;
+  public constructor() {
+
   }
 
   static parse(data: JSON): Playlist {
-      return new Playlist(data['id'], data['name'], data['likes'], data['dislikes'], data['img'], data['owner']);
+      let playlist: Playlist = new Playlist();
+      playlist = Deserialize(data, Playlist);
+      return playlist;
   }
 
     public toCard(): Card {

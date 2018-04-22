@@ -89,5 +89,20 @@ export class DemoService {
         );
     }
 
+    public getUsers(): Observable<User[]> {
+        const url = 'https://raw.githubusercontent.com/DowntownCookieFrenzy/play-music-json/master/demo.json';
+        const obvs: Observable<JSON> = this.http.get<JSON>(url, {responseType: 'json'});
+        return obvs.pipe(
+            map((data) => {
+                data = data['Users'];
+                const user: User[] = [];
+                for (let i = 0; i < Object.keys(data).length; i++) {
+                    user.push(User.parse(data[i]));
+                }
+                return user;
+            })
+        );
+    }
+
 
 }
