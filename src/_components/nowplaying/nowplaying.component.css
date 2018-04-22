@@ -4,6 +4,11 @@ body {
     font-family: Helvetica, sans-serif;
     font-size: 12px;
 }
+
+img {
+    opacity: 0.5;
+}
+
 .main-container {
     position: center;
     margin: 10em auto 0 auto;
