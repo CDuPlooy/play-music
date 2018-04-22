@@ -9,6 +9,10 @@ body {
   z-index: 1;
   bottom: 0;
   width: 100%;
+  float:none;
+  margin:0 auto;
+  display: block;
+  text-align: center;
 }
 
 .navbar a {
@@ -35,3 +39,4 @@ body {
   padding: 16px;
   margin-bottom: 30px;
 }
+
