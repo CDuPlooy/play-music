@@ -11,6 +11,8 @@ export class Song {
   @deserializeAs('dislikes') @serializeAs('dislikes') public dislikes: number;
   @deserializeAs('img') @serializeAs('img') public src: string;
 
+  public num: number;       // Tiny stub used for cover-flow
+
   public constructor() {}
 
   static parse(data: JSON): Song {
@@ -21,5 +23,9 @@ export class Song {
 
   public toCard(): Card {
       return new Card(this.name, this.artist, this.src);
+  }
+
+  public toCoverFlowField(): String {
+      return 'cover-' + this.num.toString();
   }
 }
