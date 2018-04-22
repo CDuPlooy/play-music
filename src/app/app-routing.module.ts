@@ -9,6 +9,7 @@ import {NowplayingComponent} from '../_components/nowplaying/nowplaying.componen
 import {ArtistComponent} from '../_components/artist/artist.component';
 import {AlbumviewComponent} from '../_components/albumview/albumview.component';
 import {HomeComponent} from '../_components/home/home.component';
+import {PopoverComponent} from '../_components/popover/popover.component';
 
 const routes: Routes = [
   {path: 'songs', component: SongComponent},
@@ -19,7 +20,9 @@ const routes: Routes = [
   {path: 'artist/:id', component: ArtistComponent},
   {path: 'album/:id', component: AlbumviewComponent},
   {path: '#', component: HomeComponent},
-  {path: '', component: HomeComponent}
+  {path: '', component: HomeComponent},
+  {path: 'test', component: PopoverComponent},
+
 ];
 
 @NgModule({

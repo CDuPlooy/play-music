@@ -13,6 +13,8 @@ import { NowplayingComponent } from '../_components/nowplaying/nowplaying.compon
 import { ArtistComponent } from '../_components/artist/artist.component';
 import { AlbumviewComponent } from '../_components/albumview/albumview.component';
 import { HomeComponent } from '../_components/home/home.component';
+import { PopoverComponent } from '../_components/popover/popover.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -28,11 +30,13 @@ import { HomeComponent } from '../_components/home/home.component';
     ArtistComponent,
     AlbumviewComponent,
     HomeComponent,
+    PopoverComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgbModule.forRoot()
   ],
   providers: [DemoService],
   bootstrap: [AppComponent]
