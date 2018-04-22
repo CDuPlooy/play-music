@@ -14,6 +14,7 @@ import { ArtistComponent } from '../_components/artist/artist.component';
 import { AlbumviewComponent } from '../_components/albumview/albumview.component';
 import { HomeComponent } from '../_components/home/home.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { SearchComponent } from '../_components/search/search.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     ArtistComponent,
     AlbumviewComponent,
     HomeComponent,
+    SearchComponent,
   ],
   imports: [
     BrowserModule,
