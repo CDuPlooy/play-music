@@ -39,5 +39,23 @@
       </div>
     </div>
 
+    <br><br>
+    <div class="container-fluid">
+      <h4>Blocked Artists</h4>
+      <input [ngModelOptions]="{standalone: true}" [(ngModel)]="blockee" type="text" id="blockee" placeholder="Seether">
+      <button type="button" class="btn btn-outline-primary" style="size: 15px"  (click)="block()">
+        <i class="fas fa-stop" style="font-size: 15px;"></i>
+      </button>
+      <br>
+      <div class="container float-left">
+      <div class="list-group" *ngFor="let a of artists">
+
+        <a class="list-group-item">
+          {{ a }}
+        </a>
+      </div>
+      </div>
+    </div>
+
   </div>
 </form>
