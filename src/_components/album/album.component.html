@@ -6,12 +6,14 @@
             <h5 class="card-title">{{ c.title }}</h5>
             <p class="card-text">{{ c.text }}</p>
             <div class="container">
-            <button type="button" class="btn btn-outline-primary" style="align-self: left;">
-                <i class="fas fa-play" style="font-size: 20px;"></i>
-            </button>
+                <div id="div1">
+                    <button type="button" class="btn btn-outline-primary" style="align-self: left;">
+                        <i class="fas fa-play" style="font-size: 20px;"></i>
+                    </button>
+                </div>
 
 
-                <div ngbDropdown style="align: right;">
+                <div id="div2" ngbDropdown style="align: right;">
                     <button class="btn btn-outline-secondary" id="dropdownBasic1" ngbDropdownToggle><i class="fas fa-plus" style="font-size: 20px;"></i></button>
                     <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
                         <button class="dropdown-item">Like</button>
