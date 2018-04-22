@@ -10,6 +10,7 @@ import {ArtistComponent} from '../_components/artist/artist.component';
 import {AlbumviewComponent} from '../_components/albumview/albumview.component';
 import {HomeComponent} from '../_components/home/home.component';
 import {SearchComponent} from '../_components/search/search.component';
+import {SettingsComponent} from '../_components/settings/settings.component';
 
 const routes: Routes = [
   {path: 'songs', component: SongComponent},
@@ -21,8 +22,10 @@ const routes: Routes = [
   {path: 'album/:id', component: AlbumviewComponent},
   {path: '#', component: HomeComponent},
   {path: '', component: HomeComponent},
-  {path: 'search', component: SearchComponent}
-];
+  {path: 'search', component: SearchComponent},
+  {path: 'settings', component: SettingsComponent},
+
+  ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

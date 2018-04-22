@@ -29,7 +29,11 @@ body {
     height: 100%;
     margin-left: -250px;
     overflow-y: auto;
-    background: #000;
+    background-color: #eb6864;
+    color: #ffffff;
+
+
+
   <!--<div class="navbar-brand" (click)="toggle();">Google Play Music</div>-->
     -webkit-transition: all 0.5s ease;
     -moz-transition: all 0.5s ease;
@@ -62,17 +66,20 @@ body {
     margin: 0;
     padding: 0;
     list-style: none;
+    background-color: #eb6864;
+    color: #ffffff;
 }
 
 .sidebar-nav li {
     text-indent: 20px;
     line-height: 40px;
+    color: #ffffff;
 }
 
 .sidebar-nav li a {
     display: block;
     text-decoration: none;
-    color: #999999;
+    color: #ffffff;
 }
 
 .sidebar-nav li a:hover {

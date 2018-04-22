@@ -5,21 +5,20 @@
   <div id="sidebar-wrapper">
     <ul class="sidebar-nav">
       <li class="sidebar-brand">
-        <a href="" (click)="toggle();">
+        <a style="color: #ffffff;" (click)="toggle();">
           Close
         </a>
       </li>
       <li>
         <a href="">Create Playlist</a>
-        <a href="">Settings</a>
-        <a href="">I dont know</a>
+        <a href="#" routerLink="settings" (click)="toggle();">Settings</a>
       </li>
     </ul>
   </div>
 </div>
 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <div class="navbar" (click)="toggle();">Google Play Music</div>
+  <div class="navbar" (click)="toggle();" style="color: #ffffff;" >Google Play Music</div>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
