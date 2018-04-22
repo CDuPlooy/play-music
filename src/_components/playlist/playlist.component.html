@@ -5,9 +5,28 @@
       <div class="card-body">
         <h5 class="card-title">{{ c.title }}</h5>
         <p class="card-text">{{ c.text }}</p>
-        <button type="button" class="btn btn-outline-primary">
-          <i class="fas fa-play" style="font-size: 20px;"></i>
-        </button>
+        <!--<button type="button" class="btn btn-outline-primary">-->
+          <!--<i class="fas fa-play" style="font-size: 20px;"></i>-->
+        <!--</button>-->
+        <div class="container">
+          <div id="div1">
+            <button type="button" class="btn btn-outline-primary" style="align-self: left;">
+              <i class="fas fa-play" style="font-size: 20px;"></i>
+            </button>
+          </div>
+
+
+          <div id="div2" ngbDropdown style="align: right;">
+            <button class="btn btn-outline-secondary" id="dropdownBasic1" ngbDropdownToggle><i class="fas fa-plus" style="font-size: 20px;"></i></button>
+            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+              <button class="dropdown-item">Like</button>
+              <button class="dropdown-item">Dislike</button>
+              <button class="dropdown-item">Add to playlist</button>
+            </div>
+
+
+          </div>
+        </divckgrou
       </div>
     </div>
   </div>
