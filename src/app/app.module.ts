@@ -15,6 +15,7 @@ import { AlbumviewComponent } from '../_components/albumview/albumview.component
 import { HomeComponent } from '../_components/home/home.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SearchComponent } from '../_components/search/search.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { SearchComponent } from '../_components/search/search.component';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule,
     NgbModule.forRoot()

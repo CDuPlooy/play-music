@@ -1,4 +1,4 @@
-<input type="text" class="form-control input-group-lg" placeholder="Type here to search..." aria-label="search" aria-describedby="basic-addon1">
+<input id="searchBar" type="text" class="form-control input-group-lg" [(ngModel)]="filter" placeholder="{{ filter }}" aria-label="search" aria-describedby="basic-addon1">
 
 <div class="card-group">
   <div class="row-4 d-inline-flex p-2" *ngFor="let c of cards">
