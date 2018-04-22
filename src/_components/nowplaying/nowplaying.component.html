@@ -1,19 +1,23 @@
-<!--- This may need to change --->
-<!--Used https://gist.github.com/xav76/3947496 -->
+<!--&lt;!&ndash;- This may need to change -&ndash;&gt;-->
+<!--&lt;!&ndash;Used https://gist.github.com/xav76/3947496 &ndash;&gt;-->
 
-<div class="main-container">
-    <div class="coverflow-container">
-        <ol class="coverflow-list">
-            <!-- Cover item -->
-            <li class="coverflow-item" *ngFor="let s of songs">
-                <input type="radio" name="cover-item" id="{{ s.toCoverFlowField() }}">
-                <label for="{{ s.toCoverFlowField() }}">
-                    <figure class="album-cover">
-                        <img src="{{s.src}}">
-                        <figcaption class="album-name">{{s.name}}</figcaption>
-                    </figure>
-                </label>
-            </li>
-        </ol>
-    </div>
+<!--<div class="main-container">-->
+    <!--<div class="coverflow-container">-->
+        <!--<ol class="coverflow-list">-->
+            <!--&lt;!&ndash; Cover item &ndash;&gt;-->
+            <!--<li class="coverflow-item" *ngFor="let s of songs">-->
+                <!--<input type="radio" name="cover-item" id="{{ s.toCoverFlowField() }}">-->
+                <!--<label for="{{ s.toCoverFlowField() }}">-->
+                    <!--<figure class="album-cover">-->
+                        <!--<img src="{{s.src}}">-->
+                        <!--<figcaption class="album-name">{{s.name}}</figcaption>-->
+                    <!--</figure>-->
+                <!--</label>-->
+            <!--</li>-->
+        <!--</ol>-->
+    <!--</div>-->
+<!--</div>-->
+
+<div class="container-fluid">
+
 </div>
