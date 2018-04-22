@@ -17,6 +17,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { SearchComponent } from '../_components/search/search.component';
 import {FormsModule} from '@angular/forms';
 import { SettingsComponent } from '../_components/settings/settings.component';
+import { DevicesComponent } from '../_components/devices/devices.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { SettingsComponent } from '../_components/settings/settings.component';
     HomeComponent,
     SearchComponent,
     SettingsComponent,
+    DevicesComponent,
   ],
   imports: [
     BrowserModule,
