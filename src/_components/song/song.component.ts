@@ -20,7 +20,7 @@ export class SongComponent implements OnInit, AfterViewInit {
     public songs: Song[] = [];
 
   ngOnInit() {
-      this.filter = '';
+      this.filter = 'Type anything to search . . . ';
       this.demo.getSongs().subscribe((data) => {
           for (let i = 0; i < data.length; i++) {
               this.cards.push(data[i].toCard());
