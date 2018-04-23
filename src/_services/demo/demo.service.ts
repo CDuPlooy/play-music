@@ -8,24 +8,46 @@ import { map } from 'rxjs/operators';
 export class DemoService {
 
   constructor(private http: HttpClient) {  }
-  private songs: Song[];
-  private users: User[];
-  private playlist: Playlist[];
+  private songs: Song[] = null;
+  private users: User[] = null;
+  private playlist: Playlist[] = null;
+  private featured: Playlist[] = null;
+  private albums: Album[] = null;
+  private artists: Artist[] = null;
 
+
+  public lockSongs(songs: Song[]) {
+      this.songs = songs;
+  }
+
+  public lockUsers(users: User[]) {
+      this.users = users;
+  }
+
+  public unlockSongs() {
+      this.songs = null;
+  }
 
   public getSongs(): Observable<Song[]> {
       const url = 'https://raw.githubusercontent.com/DowntownCookieFrenzy/play-music-json/master/demo.json';
-      const obvs: Observable<JSON> = this.http.get<JSON>(url, {responseType: 'json'});
-      return obvs.pipe(
-          map((data) => {
-              data = data['Songs'];
-              const songs: Song[] = [];
-              for (let i = 0; i < Object.keys(data).length; i++) {
-                  songs.push(Song.parse(data[i]));
-              }
-              return songs;
-          })
-      );
+      if (this.songs != null) {
+          return Observable.create((obvs) => {
+              obvs.next(this.songs);
+          });
+      } else {
+          const obvs: Observable<JSON> = this.http.get<JSON>(url, {responseType: 'json'});
+          return obvs.pipe(
+              map((data) => {
+                  data = data['Songs'];
+                  const songs: Song[] = [];
+                  for (let i = 0; i < Object.keys(data).length; i++) {
+                      songs.push(Song.parse(data[i]));
+                  }
+                  this.lockSongs(songs);
+                  return songs;
+              })
+          );
+      }
   }
 
 
@@ -44,7 +66,7 @@ export class DemoService {
       );
   }
 
-    public getPlaylist(): Observable<Playlist[]> {
+  public getPlaylist(): Observable<Playlist[]> {
         const url = 'https://raw.githubusercontent.com/DowntownCookieFrenzy/play-music-json/master/demo.json';
         const obvs: Observable<JSON> = this.http.get<JSON>(url, {responseType: 'json'});
         return obvs.pipe(
@@ -59,7 +81,7 @@ export class DemoService {
         );
     }
 
-    public getArtists(): Observable<Artist[]> {
+  public getArtists(): Observable<Artist[]> {
         const url = 'https://raw.githubusercontent.com/DowntownCookieFrenzy/play-music-json/master/demo.json';
         const obvs: Observable<JSON> = this.http.get<JSON>(url, {responseType: 'json'});
         return obvs.pipe(

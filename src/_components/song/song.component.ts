@@ -47,4 +47,10 @@ export class SongComponent implements OnInit, AfterViewInit {
       });
   }
 
+  public test() {
+      this.demo.getSongs().subscribe(songs => {
+         this.demo.lockSongs(this.songs.splice(0, 1));
+      });
+  }
+
 }
