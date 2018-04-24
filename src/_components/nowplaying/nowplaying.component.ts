@@ -3,6 +3,7 @@ import {DemoService} from '../../_services';
 import {Song} from '../../_models';
 import {Observable} from 'rxjs/Observable';
 import { map } from 'rxjs/operators';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-nowplaying',
@@ -11,7 +12,7 @@ import { map } from 'rxjs/operators';
 })
 export class NowplayingComponent implements OnInit {
   public songs: Song[];
-  constructor(private demo: DemoService) { }
+  constructor(private router: Router, private demo: DemoService) { }
 
   ngOnInit() {
     let i = 1;
@@ -22,5 +23,8 @@ export class NowplayingComponent implements OnInit {
         this.songs = songs;
     });
 
+    this.demo.getSongs().subscribe(msg => {
+        this.demo.lockSongs(msg);
+    });
   }
 }

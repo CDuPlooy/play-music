@@ -116,7 +116,7 @@ export class DemoService {
         const url = 'https://raw.githubusercontent.com/DowntownCookieFrenzy/play-music-json/master/demo.json';
         if (this.artists != null) {
             return Observable.create((obvs) => {
-                obvs.next(this.artists);
+                obvs.next(this.albums);
             });
         } else {
             const obvs: Observable<JSON> = this.http.get<JSON>(url, {responseType: 'json'});
@@ -138,7 +138,7 @@ export class DemoService {
         const url = 'https://raw.githubusercontent.com/DowntownCookieFrenzy/play-music-json/master/demo.json';
         if (this.artists != null) {
             return Observable.create((obvs) => {
-                obvs.next(this.artists);
+                obvs.next(this.playlist);
             });
         } else {
             const obvs: Observable<JSON> = this.http.get<JSON>(url, {responseType: 'json'});
@@ -160,7 +160,7 @@ export class DemoService {
         const url = 'https://raw.githubusercontent.com/DowntownCookieFrenzy/play-music-json/master/demo.json';
         if (this.artists != null) {
             return Observable.create((obvs) => {
-                obvs.next(this.artists);
+                obvs.next(this.users);
             });
         } else {
             const obvs: Observable<JSON> = this.http.get<JSON>(url, {responseType: 'json'});
