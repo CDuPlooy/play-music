@@ -31,6 +31,12 @@ export class SongComponent implements OnInit, AfterViewInit {
 
   ngAfterViewInit() {
       const input = document.getElementById('searchBar');
+      fromEvent(input, 'keydown').subscribe(e => {
+          if (this.filter.indexOf('Type anything to search . . . ') !== -1) {
+              this.filter = '';
+          }
+      });
+
       fromEvent(input, 'keyup').subscribe((e) => {
             if (this.filter.length === 0) {
                 this.cards = [];
@@ -40,7 +46,7 @@ export class SongComponent implements OnInit, AfterViewInit {
             }
 
             for (let i = 0; i < this.cards.length; i++) {
-                if (this.cards[i].title.indexOf(this.filter) === -1) {
+                if (this.cards[i].title.indexOf(this.filter) === -1 && this.cards[i].text.indexOf(this.filter) === -1) {
                     this.cards.splice(i, 1);
                 }
             }
