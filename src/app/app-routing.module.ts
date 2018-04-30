@@ -11,12 +11,14 @@ import {AlbumviewComponent} from '../_components/albumview/albumview.component';
 import {HomeComponent} from '../_components/home/home.component';
 import {SearchComponent} from '../_components/search/search.component';
 import {SettingsComponent} from '../_components/settings/settings.component';
+import {PlaylistviewComponent} from '../_components/playlistview/playlistview.component';
 
 const routes: Routes = [
   {path: 'songs', component: SongComponent},
   {path: 'albums', component: AlbumComponent},
   {path: 'playlists', component: PlaylistComponent},
   {path: 'playlists/:action/:pl_id/:song_id', component: PlaylistComponent},
+  {path: 'playlists/:action/:id', component: PlaylistviewComponent},
   {path: 'users/:id', component: UserComponent},
   {path: 'nowplaying', component: NowplayingComponent},
   {path: 'artist/:action/:id', component: ArtistComponent},

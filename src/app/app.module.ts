@@ -18,6 +18,7 @@ import { SearchComponent } from '../_components/search/search.component';
 import {FormsModule} from '@angular/forms';
 import { SettingsComponent } from '../_components/settings/settings.component';
 import { DevicesComponent } from '../_components/devices/devices.component';
+import {PlaylistviewComponent} from '../_components/playlistview/playlistview.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +37,7 @@ import { DevicesComponent } from '../_components/devices/devices.component';
     SearchComponent,
     SettingsComponent,
     DevicesComponent,
+    PlaylistviewComponent,
   ],
   imports: [
     BrowserModule,
