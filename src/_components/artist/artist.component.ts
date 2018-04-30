@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 import {DemoService} from '../../_services';
 import {Artist, Card} from '../../_models';
 
@@ -10,7 +10,7 @@ import {Artist, Card} from '../../_models';
 })
 export class ArtistComponent implements OnInit {
 
-  constructor(private router: ActivatedRoute, private demo: DemoService) { }
+  constructor(private r: Router, private router: ActivatedRoute, private demo: DemoService) { }
   public id: string;
   public activeArtist: Artist;
   public cards: Card[];
@@ -43,6 +43,10 @@ export class ArtistComponent implements OnInit {
         }
       }
     });
+  }
+
+  public nav(id: string){
+    this.r.navigate(['localhost:4200/artist/view/' + id]);
   }
 
 }
