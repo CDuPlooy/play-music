@@ -114,7 +114,7 @@ export class DemoService {
 
     public getAlbums(): Observable<Album[]> {
         const url = 'https://raw.githubusercontent.com/DowntownCookieFrenzy/play-music-json/master/demo.json';
-        if (this.artists != null) {
+        if (this.albums != null) {
             return Observable.create((obvs) => {
                 obvs.next(this.albums);
             });
@@ -136,7 +136,7 @@ export class DemoService {
 
     public getPlaylist(): Observable<Playlist[]> {
         const url = 'https://raw.githubusercontent.com/DowntownCookieFrenzy/play-music-json/master/demo.json';
-        if (this.artists != null) {
+        if (this.playlist != null) {
             return Observable.create((obvs) => {
                 obvs.next(this.playlist);
             });
@@ -158,7 +158,7 @@ export class DemoService {
 
     public getUsers(): Observable<User[]> {
         const url = 'https://raw.githubusercontent.com/DowntownCookieFrenzy/play-music-json/master/demo.json';
-        if (this.artists != null) {
+        if (this.users != null) {
             return Observable.create((obvs) => {
                 obvs.next(this.users);
             });

@@ -7,8 +7,9 @@ export class Playlist {
   @deserializeAs('id') @serializeAs('id') public id: number;
   @deserializeAs('name') @serializeAs('name') public name: string;
   @deserializeAs('img') @serializeAs('img') public src: string;
+  @deserializeAs('songs') @serializeAs('songs') public songs: number[];
 
-  public songs: Song[];
+
   public likes: number;
   public dislikes: number;
   public owner: string;

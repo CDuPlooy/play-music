@@ -16,6 +16,7 @@ const routes: Routes = [
   {path: 'songs', component: SongComponent},
   {path: 'albums', component: AlbumComponent},
   {path: 'playlists', component: PlaylistComponent},
+  {path: 'playlists/:action/:pl_id/:song_id', component: PlaylistComponent},
   {path: 'users/:id', component: UserComponent},
   {path: 'nowplaying', component: NowplayingComponent},
   {path: 'artist/:id', component: ArtistComponent},
