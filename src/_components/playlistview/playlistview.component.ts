@@ -36,7 +36,7 @@ export class PlaylistviewComponent implements OnInit {
                     this.activePlaylist = playlist;
                     this.demo.getSongs().subscribe(songs => {
                         for (const song of songs) {
-                            if (playlist.songs.indexOf(song.id) !== -1){
+                            if (playlist.songs.indexOf(song.id) !== -1) {
                                 this.cards.push(song.toCard());
                             }
                         }

@@ -19,7 +19,7 @@ export class ArtistComponent implements OnInit {
     this.router.paramMap
         .subscribe(params => {
           const id: number = +params.get('id'); // The + just performs the conversion.
-          if (params.get('action') === 'view'){
+          if (params.get('action') === 'view') {
               this.load(id);
           }
         });
@@ -45,7 +45,7 @@ export class ArtistComponent implements OnInit {
     });
   }
 
-  public nav(id: string){
+  public nav(id: string) {
     this.r.navigate(['localhost:4200/artist/view/' + id]);
   }
 
