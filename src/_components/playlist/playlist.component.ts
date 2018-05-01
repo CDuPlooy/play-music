@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {DemoService} from '../../_services';
 import {Playlist, Card} from '../../_models';
 import {HttpClient, HttpClientModule} from '@angular/common/http';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-playlist',
@@ -11,19 +11,24 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class PlaylistComponent implements OnInit {
 
-    constructor(private router: ActivatedRoute, private demo: DemoService, private http: HttpClient) { }
+    constructor(private r: Router, private router: ActivatedRoute, private demo: DemoService, private http: HttpClient) { }
+    public playlist: Playlist[] = [];
     public cards: Card[] = [];
 
   ngOnInit() {
+      this.cards = [];
+      this.playlist = [];
+
       this.demo.getPlaylist().subscribe((data) => {
           for (let i = 0; i < data.length; i++) {
               this.cards.push(data[i].toCard());
           }
+          this.playlist = data;
       });
 
       this.router.paramMap
           .subscribe(params => {
-              if(params.get('action') === 'add') {
+              if (params.get('action') === 'add') {
                   const id: number = +params.get('pl_id'); // The + just performs the conversion.
                   const song_id: number = +params.get('song_id');
 
@@ -49,5 +54,15 @@ export class PlaylistComponent implements OnInit {
                 }
             }
         });
+  }
+
+  public nav(name: string) {
+      this.demo.getPlaylist().subscribe((playlists) => {
+          for ( const playlist of playlists) {
+              if ( playlist.name === name) {
+                  this.r.navigate(['/playlists/view/' + playlist.id]);
+              }
+          }
+      });
   }
 }

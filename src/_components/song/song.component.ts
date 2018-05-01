@@ -5,6 +5,7 @@ import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs/Observable';
 import { fromEvent } from 'rxjs/observable/fromEvent';
 import { map } from 'rxjs/operators';
+import {Router} from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,7 @@ import { map } from 'rxjs/operators';
 })
 export class SongComponent implements OnInit, AfterViewInit {
 
-    constructor(private demo: DemoService, private http: HttpClient) { }
+    constructor(private router: Router, private demo: DemoService, private http: HttpClient) { }
     public cards: Card[] = [];
     public filter: string;
     public songs: Song[] = [];
@@ -51,5 +52,16 @@ export class SongComponent implements OnInit, AfterViewInit {
                 }
             }
       });
+  }
+
+  public navigateArtist(t_artist: string) {
+      this.demo.getArtists().subscribe(artists => {
+           for (const artist of artists) {
+               if (artist.name.toLowerCase() === t_artist.toLowerCase()) {
+                   this.router.navigate(['/artist/view/' + artist.id]);
+                   console.log('here');
+               }
+           }
+        });
   }
 }

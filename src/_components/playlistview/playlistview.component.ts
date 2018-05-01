@@ -23,12 +23,12 @@ export class PlaylistviewComponent implements OnInit {
                 const id: number = +params.get('id'); // The + just performs the conversion.
                 if (params.get('action') === 'view') {
                     this.load(id);
-                    this.cards = [];
                 }
             });
     }
 
     public load(id: number) {
+        this.cards = [];
         this.demo.getPlaylist().subscribe(playlists => {
             for (const playlist of playlists) {
                 if (playlist.id === id) {
@@ -44,5 +44,6 @@ export class PlaylistviewComponent implements OnInit {
                 }
             }
         });
+        console.log(this.cards);
     }
 }

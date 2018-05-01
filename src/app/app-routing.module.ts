@@ -22,7 +22,7 @@ const routes: Routes = [
   {path: 'users/:id', component: UserComponent},
   {path: 'nowplaying', component: NowplayingComponent},
   {path: 'artist/:action/:id', component: ArtistComponent},
-  {path: 'album/:id', component: AlbumviewComponent},
+  {path: 'album/:action/:id', component: AlbumviewComponent},
   {path: '#', component: HomeComponent},
   {path: '', component: HomeComponent},
   {path: 'search', component: SearchComponent},

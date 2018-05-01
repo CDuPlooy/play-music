@@ -18,7 +18,9 @@ export class AlbumviewComponent implements OnInit {
         this.router.paramMap
             .subscribe(params => {
                 const id: number = +params.get('id'); // The + just performs the conversion.
-                this.load(id);
+                if(params.get('action') === 'view') {
+                    this.load(id);
+                }
             });
     }
 
