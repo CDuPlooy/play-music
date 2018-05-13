@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {Card} from '../../_models';
 import {HttpClient} from '@angular/common/http';
 import {DemoService} from '../../_services';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-allartists',
@@ -10,7 +11,7 @@ import {DemoService} from '../../_services';
 })
 export class AllartistsComponent implements OnInit {
 
-  constructor(private demo: DemoService, private http: HttpClient) { }
+  constructor(private demo: DemoService, private http: HttpClient, private router: Router) { }
   public cards: Card[] = [];
 
   ngOnInit() {
@@ -19,6 +20,16 @@ export class AllartistsComponent implements OnInit {
               this.cards.push(artist[i].toCard());
           }
       });
+  }
+
+  public open(name: string) {
+        this.demo.getArtists().subscribe(artists => {
+            for (const artist of artists) {
+                if (artist.name === name){
+                    this.router.navigate(['artist/view/' + artist.id]);
+                }
+            }
+        });
   }
 
 }
