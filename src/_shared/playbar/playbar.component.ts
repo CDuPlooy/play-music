@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {PlaymusicService} from '../../_services';
 
 @Component({
   selector: 'app-playbar',
@@ -6,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./playbar.component.css']
 })
 export class PlaybarComponent implements OnInit {
-
-  constructor() { }
+  public progress = 0;
+  constructor(private play: PlaymusicService) { }
 
   ngOnInit() {
+    this.play.onchange.subscribe(prog => this.progress = prog);
   }
 }

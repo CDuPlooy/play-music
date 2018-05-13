@@ -7,7 +7,7 @@ import { AppComponent } from './app.component';
 import { PlaylistComponent, UserComponent, AlbumComponent, SongComponent, SongcardsComponent } from '../_components';
 import { NavbarComponent, PlaybarComponent } from '../_shared';
 
-import { DemoService } from '../_services/';
+import {DemoService, PlaymusicService} from '../_services/';
 import { HttpClientModule } from '@angular/common/http';
 import { NowplayingComponent } from '../_components/nowplaying/nowplaying.component';
 import { ArtistComponent } from '../_components/artist/artist.component';
@@ -50,7 +50,7 @@ import { AllartistsComponent } from '../_components/allartists/allartists.compon
     HttpClientModule,
     NgbModule.forRoot()
   ],
-  providers: [DemoService],
+  providers: [DemoService, PlaymusicService],
   bootstrap: [AppComponent]
 })
 export class AppModule {
