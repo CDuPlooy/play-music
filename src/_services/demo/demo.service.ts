@@ -76,6 +76,20 @@ export class DemoService {
         this.albums = null;
     }
 
+    public getSongURL(id: string): Observable<string> {
+        const url = 'https://raw.githubusercontent.com/DowntownCookieFrenzy/play-music-json/master/demo.json';
+        return this.http.get<JSON>(url, {responseType: 'json'}).pipe(
+            map((data) => {
+                for (let i = 0; i < Object.keys(data['Music']).length; i++) {
+                    if (data['Music']['id'] === id) {
+                        return data['Music']['url'];
+                    }
+                }
+                return 'http://cdn.mos.musicradar.com/audio/samples/eighties-demo-loops/K06LeadSyn93A-05.mp3';
+            })
+        );
+    }
+
     public getSongs(): Observable<Song[]> {
         const url = 'https://raw.githubusercontent.com/DowntownCookieFrenzy/play-music-json/master/demo.json';
         if (this.songs != null) {
