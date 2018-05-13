@@ -14,6 +14,10 @@ export class CommunityComponent implements OnInit {
     this.router.navigate(['../artists']);
   }
 
+    goSongs() {
+        this.router.navigate(['../songs']);
+    }
+
   ngOnInit() {
   }
 
