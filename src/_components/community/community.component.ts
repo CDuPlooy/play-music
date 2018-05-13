@@ -11,7 +11,7 @@ export class CommunityComponent implements OnInit {
   constructor(private router: Router) { }
 
   goArtists() {
-    this.router.navigate(['../artists']);
+    this.router.navigate(['/artists']);
   }
 
   ngOnInit() {

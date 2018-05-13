@@ -11,7 +11,7 @@ import {DemoService} from '../../_services';
 export class AllartistsComponent implements OnInit {
 
   constructor(private demo: DemoService, private http: HttpClient) { }
-  public cards: Card[];
+  public cards: Card[] = [];
 
   ngOnInit() {
       this.demo.getArtists().subscribe((artist) => {
