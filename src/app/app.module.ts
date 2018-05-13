@@ -21,6 +21,7 @@ import { DevicesComponent } from '../_components/devices/devices.component';
 import {PlaylistviewComponent} from '../_components/playlistview/playlistview.component';
 import { CommunityComponent } from '../_components/community/community.component';
 import { AllartistsComponent } from '../_components/allartists/allartists.component';
+import { DebugComponent } from '../_components/debug-component/debug-component.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { AllartistsComponent } from '../_components/allartists/allartists.compon
     PlaylistviewComponent,
     CommunityComponent,
     AllartistsComponent,
+    DebugComponent,
   ],
   imports: [
     BrowserModule,

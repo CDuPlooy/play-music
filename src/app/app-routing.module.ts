@@ -14,6 +14,7 @@ import {SettingsComponent} from '../_components/settings/settings.component';
 import {PlaylistviewComponent} from '../_components/playlistview/playlistview.component';
 import {CommunityComponent} from '../_components/community/community.component';
 import {AllartistsComponent} from '../_components/allartists/allartists.component';
+import {DebugComponent} from '../_components/debug-component/debug-component.component';
 
 const routes: Routes = [
   {path: 'songs', component: SongComponent},
@@ -31,7 +32,7 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'search', component: SearchComponent},
   {path: 'settings', component: SettingsComponent},
-
+  {path: 'reset', component: DebugComponent},
   ];
 
 @NgModule({
