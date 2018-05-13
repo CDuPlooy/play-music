@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Album, Artist} from '../../_models';
 import {DemoService} from '../../_services';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-settings',
@@ -10,9 +11,13 @@ import {DemoService} from '../../_services';
 export class SettingsComponent implements OnInit {
   public blockee: string;
   public artists: string[] = [];
-  constructor(private demo: DemoService) { }
+  constructor(private demo: DemoService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  public viewFamily(){
+    this.router.navigate(['family']);
   }
 
   public block() {

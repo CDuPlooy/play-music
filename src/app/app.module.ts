@@ -22,6 +22,7 @@ import {PlaylistviewComponent} from '../_components/playlistview/playlistview.co
 import { CommunityComponent } from '../_components/community/community.component';
 import { AllartistsComponent } from '../_components/allartists/allartists.component';
 import { DebugComponent } from '../_components/debug-component/debug-component.component';
+import { FamilyComponent } from '../_components/family/family.component';
 
 @NgModule({
   declarations: [
@@ -44,6 +45,7 @@ import { DebugComponent } from '../_components/debug-component/debug-component.c
     CommunityComponent,
     AllartistsComponent,
     DebugComponent,
+    FamilyComponent,
   ],
   imports: [
     BrowserModule,
