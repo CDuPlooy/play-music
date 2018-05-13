@@ -10,13 +10,10 @@
         <!--<button type="button" class="btn btn-outline-primary">-->
           <!--<i class="fas fa-play" style="font-size: 20px;"></i>-->
         <!--</button>-->
-        <div class="container">
-          <div id="div1">
-            <button type="button" class="btn btn-outline-primary" style="align-self: left;">
+          <div id="div1" (click)="this.test(c.title, c.text)">
+            <button type="button" class="btn btn-outline-primary" style="align-self: left;" >
               <i class="fas fa-play" style="font-size: 20px;"></i>
             </button>
-          </div>
-
 
           <div id="div2" ngbDropdown style="align: right;">
             <button class="btn btn-outline-secondary" id="dropdownBasic1" ngbDropdownToggle><i class="fas fa-plus" style="font-size: 20px;"></i></button>
@@ -26,8 +23,6 @@
               <button class="dropdown-item">Dislike</button>
               <button class="dropdown-item" (click)="test()">Add to playlist</button>
             </div>
-
-
           </div>
         </div>
       </div>

@@ -16,4 +16,7 @@ export class SongcardsComponent implements OnInit {
     // cards = this.demo.getSongs();
   }
 
+  public test() {
+    console.log('Hello');
+  }
 }
