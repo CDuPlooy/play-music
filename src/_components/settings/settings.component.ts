@@ -16,7 +16,7 @@ export class SettingsComponent implements OnInit {
   ngOnInit() {
   }
 
-  public viewFamily(){
+  public viewFamily() {
     this.router.navigate(['family']);
   }
 

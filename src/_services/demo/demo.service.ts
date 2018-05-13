@@ -17,7 +17,7 @@ export class DemoService {
     private albums: Album[] = null;
     private artists: Artist[] = null;
 
-    public unlock(){
+    public unlock() {
         this.unlockAlbums();
         this.unlockArtist();
         this.unlockFeatured();
