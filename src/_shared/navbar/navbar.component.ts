@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DemoService} from '../../_services';
+import {Router} from '@angular/router';
 declare var jquery: any;
 declare var $: any;
 
@@ -9,13 +11,19 @@ declare var $: any;
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private demo: DemoService, private router: Router) { }
 
   ngOnInit() {
   }
 
     public toggle() {
             $('#wrapper').toggleClass('toggled');
+    }
+
+    public reset() {
+      this.demo.unlock();
+      console.log('Resetted demo');
+      this.router.navigate(['#']);
     }
 
 }
