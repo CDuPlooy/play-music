@@ -12,6 +12,8 @@ import {HomeComponent} from '../_components/home/home.component';
 import {SearchComponent} from '../_components/search/search.component';
 import {SettingsComponent} from '../_components/settings/settings.component';
 import {PlaylistviewComponent} from '../_components/playlistview/playlistview.component';
+import {CommunityComponent} from '../_components/community/community.component';
+import {AllartistsComponent} from '../_components/allartists/allartists.component';
 
 const routes: Routes = [
   {path: 'songs', component: SongComponent},
@@ -20,7 +22,9 @@ const routes: Routes = [
   {path: 'playlists/:action/:pl_id/:song_id', component: PlaylistComponent},
   {path: 'playlists/:action/:id', component: PlaylistviewComponent},
   {path: 'users/:id', component: UserComponent},
+  {path: 'community', component: CommunityComponent},
   {path: 'nowplaying', component: NowplayingComponent},
+  {path: 'artists', component: AllartistsComponent},
   {path: 'artist/:action/:id', component: ArtistComponent},
   {path: 'album/:action/:id', component: AlbumviewComponent},
   {path: '#', component: HomeComponent},

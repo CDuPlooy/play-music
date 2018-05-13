@@ -19,6 +19,8 @@ import {FormsModule} from '@angular/forms';
 import { SettingsComponent } from '../_components/settings/settings.component';
 import { DevicesComponent } from '../_components/devices/devices.component';
 import {PlaylistviewComponent} from '../_components/playlistview/playlistview.component';
+import { CommunityComponent } from '../_components/community/community.component';
+import { AllartistsComponent } from '../_components/allartists/allartists.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import {PlaylistviewComponent} from '../_components/playlistview/playlistview.co
     SettingsComponent,
     DevicesComponent,
     PlaylistviewComponent,
+    CommunityComponent,
+    AllartistsComponent,
   ],
   imports: [
     BrowserModule,
