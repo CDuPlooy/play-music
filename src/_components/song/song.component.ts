@@ -68,7 +68,8 @@ export class SongComponent implements OnInit, AfterViewInit {
   }
 
   public play(song: string, artist: string) {
-      const audio = new Audio('http://www.noiseaddicts.com/samples_1w72b820/280.mp3');
+      const src = 'http://www.noiseaddicts.com/samples_1w72b820/280.mp3';
+      const audio = new Audio(src);
       audio.play();
       this.playService.setProgress(0);
 
