@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Album, Card} from '../../_models';
+import {Album, Card, Song} from '../../_models';
 import {DemoService} from '../../_services';
 import {HttpClient} from '@angular/common/http';
 

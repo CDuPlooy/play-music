@@ -5,7 +5,7 @@
   <hr class="my-4">
   <div class="card-group">
     <div class="row-4 d-inline-flex p-2" *ngFor="let c of cards">
-      <div class="card" style="width: 18rem;">
+      <div class="card" style="width: 18rem;" (click)="this.open_album(c.title)">
         <img class="card-img-top flex-fill" src="{{ c.src }}" alt='img'>
         <div class="card-body">
           <h5 class="card-title">{{ c.title }}</h5>
