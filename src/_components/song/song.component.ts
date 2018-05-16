@@ -49,7 +49,7 @@ export class SongComponent implements OnInit, AfterViewInit {
             }
 
             for (let i = 0; i < this.cards.length; i++) {
-                if (this.cards[i].title.indexOf(this.filter) === -1 && this.cards[i].text.indexOf(this.filter) === -1) {
+                if (this.cards[i].title.toLowerCase().indexOf(this.filter) === -1 && this.cards[i].text.toLowerCase().indexOf(this.filter) === -1) {
                     this.cards.splice(i, 1);
                 }
             }
